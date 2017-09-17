@@ -15,15 +15,13 @@ public class Entry {
     private String where;
 
     public Entry(int newId, String newDate, String newAddiction, String newCause,
-                 String newAmount, String newCost/*, String newWho, String newWhere*/){
+                 String newAmount, String newCost){
         setId(newId);
         setDate(newDate);
         setAddiction(newAddiction);
         setCause(newCause);
         setAmount(newAmount);
         setCost(newCost);
-//        setWho(newWho);
-//        setWhere(newWhere);
     }
 
     public void setId(int newId){ id = newId; }
@@ -38,10 +36,6 @@ public class Entry {
 
     public void setCost(String newCost){ cost = newCost; }
 
-//    public void setWho(String newWho){ who = newWho; }
-//
-//    public void setWhere(String newWhere){ where = newWhere; }
-
     public int getId(){ return id; }
 
     public String getDate(){ return date; }
@@ -53,10 +47,6 @@ public class Entry {
     public String getAmount() { return amount; }
 
     public String getCost() { return cost; }
-
-//    public String getWho() { return who; }
-//
-//    public String getWhere() { return where; }
 
     public String toString(){
         return id + "; " + date + "; " + addiction + "; " + cause + "; " + amount + "; " + cost/* + "; " + who + "; " + where*/;

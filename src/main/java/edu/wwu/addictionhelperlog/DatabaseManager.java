@@ -21,8 +21,6 @@ public class DatabaseManager extends SQLiteOpenHelper{
     private static final String CAUSE = "cause";
     private static final String AMOUNT = "amount";
     private static final String COST = "cost";
-    private static final String WHO = "who";
-    private static final String WHERE = "where";
 
     public DatabaseManager( Context context ){
         super( context, DATABASE_NAME, null, DATABASE_VERSION );
@@ -33,7 +31,7 @@ public class DatabaseManager extends SQLiteOpenHelper{
         String sqlCreate = "create table " + LOGS_TABLE + "( " + ID;
         sqlCreate += " integer primary key autoincrement, " + DATE + " text, " + ADDICTION;
         sqlCreate += " text, " + CAUSE + " text, " + AMOUNT + " text, ";
-        sqlCreate += COST + " text )"; // + WHO + " text, " + WHERE + " text )";
+        sqlCreate += COST + " text )";
 
         db.execSQL( sqlCreate );
     }
@@ -53,8 +51,6 @@ public class DatabaseManager extends SQLiteOpenHelper{
         sqlInsert += "', '" + logEntry.getCause();
         sqlInsert += "', '" + logEntry.getAmount();
         sqlInsert += "', '" + logEntry.getCost() + "' )";
-        //sqlInsert += "', '" + logEntry.getWho();
-        //sqlInsert += "', '" + logEntry.getWhere() + "' )";
 
         db.execSQL(sqlInsert);
         db.close();
@@ -70,8 +66,7 @@ public class DatabaseManager extends SQLiteOpenHelper{
         while(cursor.moveToNext()){
             Entry curr = new Entry( Integer.parseInt(cursor.getString(0)),
                     cursor.getString(1), cursor.getString(2), cursor.getString(3),
-                    cursor.getString(4), cursor.getString(5)
-                    /*, cursor.getString(6), cursor.getString(7)*/);
+                    cursor.getString(4), cursor.getString(5));
             entries.add(curr);
         }
 

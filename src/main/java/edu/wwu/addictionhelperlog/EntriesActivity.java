@@ -49,8 +49,7 @@ public class EntriesActivity extends AppCompatActivity{
                 textViews[i] = new TextView(this);
                 textViews[i].setText("Date: " + logEntry.getDate() + "\nAddiction: " + logEntry.getAddiction() +
                         "\nCause: " + logEntry.getCause() + "\nAmount: " + logEntry.getAmount() +
-                        "\nCost: " + logEntry.getCost() + "\n");//With Who: " + logEntry.getWho() +
-                       // "\nWhere at: " + logEntry.getWhere() + "\n");
+                        "\nCost: " + logEntry.getCost() + "\n");
                 grid.addView(textViews[i], textViewWidth, GridLayout.LayoutParams.WRAP_CONTENT);
                 i++;
             }

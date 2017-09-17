@@ -37,7 +37,7 @@ public class LogActivity extends AppCompatActivity {
         EditText ecost = (EditText) findViewById(R.id.ecost);
         String cost = ecost.getText().toString();
 
-        Entry logEntry = new Entry(0, date, addiction, cause, amount, cost/*, who, where*/);
+        Entry logEntry = new Entry(0, date, addiction, cause, amount, cost);
         dbManager.insert(logEntry);
         Toast.makeText(this, "Entry added", Toast.LENGTH_SHORT).show();
     }

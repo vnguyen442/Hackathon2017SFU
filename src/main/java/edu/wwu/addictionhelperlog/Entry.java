@@ -49,6 +49,7 @@ public class Entry {
     public String getCost() { return cost; }
 
     public String toString(){
-        return id + "; " + date + "; " + addiction + "; " + cause + "; " + amount + "; " + cost/* + "; " + who + "; " + where*/;
+        return id + "; " + date + "; " + addiction + "; "
+                + cause + "; " + amount + "; " + cost;
     }
 }
